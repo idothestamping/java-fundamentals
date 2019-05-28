@@ -18,6 +18,7 @@ public class Main {
     clock();
   }
 
+  // Pluralize function
   public static String pluralize(String word, int count) {
     String plural = word;
     if(count == 0 || count > 1){
@@ -26,6 +27,7 @@ public class Main {
     return plural;
   }
 
+  // Flipping Coins function
   public static void flipNHeads(int num){
     int flips = 0;
     int numOfHeads = 0;
@@ -43,6 +45,7 @@ public class Main {
     System.out.println("It took " + flips + " flips to flip " + num + " head in a row.");
   }
 
+  // Clock function
   public static void clock() {
     int prevSec = 0;
     while(true){
