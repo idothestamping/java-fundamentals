@@ -14,7 +14,7 @@ public class Review {
     public String getBody() {
         return this.body;
     }
-    
+
     public String getAuthor() {
         return author;
     }
