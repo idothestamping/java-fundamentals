@@ -3,14 +3,18 @@ package inheritance;
 public class Review {
     public String body;
     public String author;
-    public int star;
+    public int rating;
+    public Restaurant restaurant;
 
-    public Review(String body, String author, int star) {
+    public Review(String body, String author, int rating, Restaurant restaurant) {
         this.body = body;
         this.author = author;
-        this.star = star;
+        this.rating = rating;
+        this.restaurant = restaurant;
+        if (this.restaurant != null) restaurant.addReview(this);
     }
 
+    // Get methods
     public String getBody() {
         return this.body;
     }
@@ -19,12 +23,19 @@ public class Review {
         return author;
     }
 
-    public int getStar() {
-        return star;
+    public int getRating() {
+        return rating;
     }
 
+    public Restaurant getRestaurant() { return restaurant; }
+
+    // Set methods
+    public void setRestaurant(Restaurant restaurant) {}
+
     public String toString() {
-        return String.format("Review: %s \n" +
-                "Author: %s Stars: %s", this.body, this.author, this.star);
+        return String.format("%s \n" +
+                        "Review: %s \n" +
+                        "Author: %s",
+                this.getRestaurant(), this.getBody(), this.getAuthor());
     }
 }
