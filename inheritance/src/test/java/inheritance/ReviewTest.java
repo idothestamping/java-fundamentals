@@ -27,13 +27,14 @@ public class ReviewTest {
     @Test
     public void testReviewToString() {
         Restaurant newrestaurant = new Restaurant("Korean BBQ", 5, "$$");
-        Review newReview = new Review("Best service in time", "Rilke", 5, newrestaurant);
+        Review newReview = new Review("Best service in time", "Doug", 5, newrestaurant);
         assertEquals(
                 "should return a string",
-                "Review: Best service in time \n" +
-                        "Author: Rilke \n" +
+                "Restaurant: Korean BBQ \n" +
                         "Rating: 5 \n" +
-                        "Restaurant: Korean BBQ",
+                        "Price: $$ \n" +
+                        "Review: Best service in time \n" +
+                        "Author: Doug",
                 newrestaurant.reviews.get(0).toString());
     }
 }
