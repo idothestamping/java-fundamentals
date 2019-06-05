@@ -14,7 +14,7 @@ public class RestaurantTest {
     @Test
     public void testRestaurantConstructorStar() {
         Restaurant newRestaurant = new Restaurant("Korean BBQ", 5, "$$");
-        assertEquals("Should have 5 stars", 5, newRestaurant.getStar());
+        assertEquals("Should have 5 rating", 5, newRestaurant.getRating());
     }
     @Test
     public void testRestaurantConstructorPrice() {
@@ -27,14 +27,24 @@ public class RestaurantTest {
         Restaurant newRestaurant = new Restaurant("Korean BBQ", 5, "$$");
         assertEquals(
                 "should return a string",
-                "A restaurant: Korean BBQ with 5 stars and price: $$",
+                "Restaurant: Korean BBQ \n" +
+                        "Rating: 5 \n" +
+                        "Price: $$",
                 newRestaurant.toString());
     }
 
     @Test
     public void testAddReview() {
         Restaurant newRestaurant = new Restaurant("Dick's", 4, "$");
-        Review newReview = new Review("best burgers", "doug", 5);
-        newRestaurant.addReview(newRestaurant.toString(), newReview.toString());
+        Review newReview = new Review("best burgers", "doug", 5, newRestaurant);
+        System.out.println(newRestaurant.reviews.get(0).toString());
+        assertEquals(
+                "should return a string",
+                "Restaurant: Dick's \n" +
+                        "Rating: 5 \n" +
+                        "Price: $ \n" +
+                        "Review: best burgers \n" +
+                        "Author: doug",
+                newRestaurant.reviews.get(0).toString());
     }
 }
